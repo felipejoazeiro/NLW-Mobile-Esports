@@ -1,4 +1,4 @@
-import { FlatList, Image, SafeAreaView, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, SafeAreaView, TouchableOpacity, View, Text } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Background } from '../../components/Background';
 import logoImg from '../../assets/logo-nlw-esports.png'
@@ -45,7 +45,16 @@ export function Game() {
             <DuoCard data={item} onConnect={()=>{
               
             }} /> 
-          )} horizontal contentContainerStyle={styles.contentList} showsHorizontalScrollIndicator={false} style={styles.containerList} />
+          )} horizontal 
+          contentContainerStyle={[duos.length > 0 ? styles.contentList : styles.emptyListContent]} 
+          
+          showsHorizontalScrollIndicator={false} style={styles.containerList} 
+          ListEmptyComponent={()=>(
+            <Text style={styles.emptyListText}>
+              Não há anúncios publicados ainda.
+            </Text>
+          )}
+          />
       </SafeAreaView>
     </Background>
   );

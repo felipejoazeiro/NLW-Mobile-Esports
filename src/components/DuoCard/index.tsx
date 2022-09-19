@@ -29,7 +29,7 @@ export function DuoCard({data, onConnect}: Props) {
         <DuoInfo label="Chamada de Audio" value={data.useVoiceChannel?"Sim":"Não"} colorValue={data.useVoiceChannel?THEME.COLORS.SUCCESS:THEME.COLORS.ALERT} />
         <TouchableOpacity style={styles.button} onPress={onConnect} >
             <GameController color={THEME.COLORS.TEXT} size={20} /> 
-            <Text style={styles.buttonTitle} >Conectar</Text> 
+            <Text style={styles.buttonTitle}>Conectar</Text> 
         </TouchableOpacity>
     </View>
    );
